@@ -116,12 +116,23 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: Center(
-            child: FlatButton(
-              onPressed: ()
-              {
+            child: Column(
+              children: <Widget>[
+                FlatButton(
+                  onPressed: ()
+                  {
 
-              },
-              child: Text("Pangolin"),
+                  },
+                  child: Text("Pangolin"),
+                ),
+                FlatButton(
+                  onPressed: ()
+                  {
+
+                  },
+                  child: Text("Pangolin"),
+                )
+              ],
             ),
           ),
         ),

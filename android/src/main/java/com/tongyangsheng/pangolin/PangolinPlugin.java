@@ -230,7 +230,9 @@ public class PangolinPlugin implements FlutterPlugin, MethodCallHandler, Activit
 //        }
 //      }
     }
-    else
+    else if(call.method.equals("loadFeedAd ")){
+      String mCodeId = call.argument("mCodeId");
+    } else
       {
       result.notImplemented();
     }
