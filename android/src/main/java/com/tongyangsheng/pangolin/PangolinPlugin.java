@@ -22,7 +22,6 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** PangolinPlugin */
 public class PangolinPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
-
     private MethodChannel methodChannel;
     private Context applicationContext;
     private Activity activity;
@@ -30,6 +29,13 @@ public class PangolinPlugin implements FlutterPlugin, MethodCallHandler, Activit
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
+    BinaryMessenger messenger = flutterPluginBinding.getBinaryMessenger();
+    flutterPluginBinding
+            .getFlutterEngine()
+            .getPlatformViewsController()
+            .getRegistry()
+            .registerViewFactory(
+                    "feedadview", new FeedAdFactory(messenger, /*containerView=*/ null));
       onAttachedToEngine(flutterPluginBinding.getApplicationContext(), flutterPluginBinding.getBinaryMessenger());
   }
 
@@ -37,6 +43,7 @@ public class PangolinPlugin implements FlutterPlugin, MethodCallHandler, Activit
         this.applicationContext = applicationContext;
         methodChannel = new MethodChannel(messenger, "com.tongyangsheng.pangolin");
         methodChannel.setMethodCallHandler(this);
+
     }
 
     @Override
@@ -72,8 +79,13 @@ public class PangolinPlugin implements FlutterPlugin, MethodCallHandler, Activit
   // depending on the user's project. onAttachedToEngine or registerWith must both be defined
   // in the same class.
   public static void registerWith(Registrar registrar) {
+
+
     final MethodChannel channel = new MethodChannel(registrar.messenger(), "com.tongyangsheng.pangolin");
     channel.setMethodCallHandler(new PangolinPlugin());
+    // 注册
+    // registrar.platformViewRegistry().registerViewFactory("feedadview",new AdFactory(registrar));
+
   }
 
   @Override
