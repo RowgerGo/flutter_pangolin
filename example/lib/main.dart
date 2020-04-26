@@ -4,6 +4,8 @@ import 'dart:async';
 
 import 'package:pangolin/pangolin.dart' as Pangolin;
 
+import 'Pages/FeedAdPage.dart';
+
 void main() => runApp(MyApp());
 
 
@@ -110,7 +112,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+      home: MyHome(),
+      routes: <String, WidgetBuilder>{'FeedAdPage': (_) => FeedAdPage()},
+    );
+  }
+}
+class MyHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
@@ -119,24 +129,21 @@ class _MyAppState extends State<MyApp> {
             child: Column(
               children: <Widget>[
                 FlatButton(
-                  onPressed: ()
-                  {
+                  onPressed: () {
 
                   },
                   child: Text("Pangolin"),
                 ),
                 FlatButton(
-                  onPressed: ()
-                  {
-
+                  onPressed: () {
+                    Navigator.of(context).pushNamed("FeedAdPage");
                   },
-                  child: Text("Pangolin"),
+                  child: Text("FeedAdPage"),
                 )
               ],
             ),
           ),
-        ),
-      ),
+        )
     );
   }
 }
