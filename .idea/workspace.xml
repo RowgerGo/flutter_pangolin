@@ -1,21 +1,240 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="69a1e289-c17a-4105-997e-40a0d7ef5a11" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/tongyangsheng/pangolin/FeedAdFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/tongyangsheng/pangolin/FeedAdView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/Pages/FeedAdPage.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/FeedAdView.dart" afterDir="false" />
+    <list default="true" id="8ff2e96a-d1dc-4e84-9890-4544dec9ce77" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ad_demo/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/LayoutManagerGroup.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/circleimageview-2.2.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/glide-3.6.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/hellodaemon-1.2.2.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/mopub-sdk-banner-5.8.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/mopub-sdk-base-5.8.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/mopub-sdk-interstitial-5.8.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/mopub-sdk-rewardedvideo-5.8.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/mopub-volley-2.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/open_ad_sdk.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/play-services-ads-17.2.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/play-services-ads-base-17.2.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/play-services-ads-identifier-16.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/play-services-ads-lite-17.2.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/play-services-basement-16.0.1.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/play-services-gass-17.2.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/play-services-measurement-base-16.3.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/libs/play-services-measurement-sdk-api-16.3.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/lint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/open_ad_sdk.keystore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/androidTest/java/com/union_test/toutiao/ExampleInstrumentedTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/google/ads/mediation/sample/activity/AdmobBannerActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/google/ads/mediation/sample/activity/AdmobFullVideoActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/google/ads/mediation/sample/activity/AdmobInterstitialActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/google/ads/mediation/sample/activity/AdmobRewardVideoActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/google/ads/mediation/sample/customevent/BundleBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/google/ads/mediation/sample/customevent/adapter/AdmobFullVideoAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/google/ads/mediation/sample/customevent/adapter/AdmobRewardVideoAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/google/ads/mediation/sample/customevent/adapter/SampleCustomEventBanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/google/ads/mediation/sample/customevent/adapter/SampleCustomEventInterstitial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/activity/LockerActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/receiver/BootCompleteReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/service/LockerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/service/TraceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/task/ExecuteTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/task/ExecuteTaskManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/util/DateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/util/DimenUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/util/PowerUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/util/ViewUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/widget/SimpleAnimationListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/widget/TouchPullDownView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/locker/widget/TouchToUnLockView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/mopub/actiivity/MopubBannerActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/mopub/actiivity/MopubFullVideoActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/mopub/actiivity/MopubInterstitialActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/mopub/actiivity/MopubRewardedVideoActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/mopub/actiivity/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/mopub/mobileads/ErrorCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/mopub/mobileads/PangolinAudienceAdAdapterConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/mopub/mobileads/PangolinAudienceAdAdapterInterstitial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/mopub/mobileads/PangolinAudienceAdBannerAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/mopub/mobileads/PangolinAudienceAdFullVideoAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/mopub/mobileads/PangolinAudienceAdRewardedVideoAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/DemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/AdapterActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/AdapterGoogleMainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/AdapterMopubActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/AllExpressAdActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/BannerActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/BannerExpressActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/DrawNativeExpressVideoActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/DrawNativeVideoActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/FeedListActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/FeedRecyclerActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/FullScreenVideoActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/FullScreenVideoView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/InteractionActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/InteractionExpressActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/NativeBannerActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/NativeExpressActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/NativeExpressListActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/NativeInteractionActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/PlayableToolActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/RewardVideoActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/activity/SplashActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/config/MyOkStack3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/config/TTAdManagerHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/dialog/DislikeDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/service/AppDownloadService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/service/AppDownloadStatusListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/utils/CopyWhiteName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/utils/NetworkUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/utils/StringUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/utils/TToast.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/utils/UIUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/utils/WeakHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/view/ILoadMoreListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/view/LoadMoreListView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/view/LoadMoreRecyclerView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/view/LoadMoreView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/java/com/union_test/toutiao/view/RadioButtonView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable-xhdpi/common_lock_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable-xhdpi/dislike_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable-xhdpi/ic_lock_charge_four.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable-xhdpi/ic_lock_charge_one.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable-xhdpi/ic_lock_charge_three.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable-xhdpi/ic_lock_charge_two.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable-xhdpi/ic_lock_cross_one.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable-xhdpi/ic_lock_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable-xhdpi/ic_lock_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable-xhdpi/ic_lock_setting.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable-xhdpi/splash_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/border_input_box.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/btn_bg_blue.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/btn_bg_blue_playable.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/btn_bg_creative.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/btn_bg_red.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/call.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/cat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/circle_big_red.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/circle_solid_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/common_sticker_header_bg_shape.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/downloadicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/lock_battery_charging_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/lock_battery_charging_60.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/lock_battery_charging_90.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/play_arrow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/splash_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tex9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tt_ad_cover_btn_begin_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/drawable/tt_ad_cover_btn_draw_begin_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_all_express_ad.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_banner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_draw_native_video.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_feed_listview.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_feed_recycler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_full_screen_video.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_insert_ad.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_locker.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_native_express.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_native_express_banner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_native_express_intersitial.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_native_express_listview.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_playable.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_reward_video.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/activity_splash.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/adapter_activity.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/dlg_dislike_custom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/download_notification_layout_demo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/express_banner_list_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/google_activity_adapter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/google_activity_banner_express.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/google_activity_interstitial_express.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/google_reward_activity.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/item_view_pager.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/listitem_ad_download_btn_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/listitem_ad_group_pic.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/listitem_ad_icon_source_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/listitem_ad_large_pic.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/listitem_ad_large_video.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/listitem_ad_native_express.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/listitem_ad_small_pic.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/listitem_ad_title_creative_btn_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/listitem_ad_vertical_pic.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/listitem_normal.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/load_more_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/locker_setting_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/mopub_activity_adapter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/mopub_activity_banner_express.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/mopub_activity_interstitial_express.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/mopub_reward_activity.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/native_ad.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/native_draw_action_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/native_insert_ad_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/touch_pull_down_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/layout/touch_to_unlock_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/add_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/add_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/app_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/header_icon_2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/heart_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/img_video_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/msg_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/search_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/share_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/video11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/video12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/video13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/mipmap-xhdpi/video14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/raw/video11.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/raw/video12.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/raw/video13.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/raw/video14.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/raw/video_2.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/values-v21/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/values/attrs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/values/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/values/integers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/values/styles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/xml/file_paths.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/main/res/xml/network_config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad_demo/src/test/java/com/union_test/toutiao/ExampleUnitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_for_Android.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/example_lib_main_dart.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/tongyangsheng/pangolin/FeedAdView.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/tongyangsheng/pangolin/FeedAdView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/tongyangsheng/pangolin/PangolinPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/tongyangsheng/pangolin/PangolinPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/Pages/FeedAdPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/Pages/FeedAdPage.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pangolin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pangolin.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,23 +243,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Dart File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1Zpss1lti5NrD8ewFbQkIuqUfdq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1b6OUBUVlhDCbf38H9vbKbHVN2j" />
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ad_demo" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\workplace\flutter_project\Pangolin" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -54,25 +270,26 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="69a1e289-c17a-4105-997e-40a0d7ef5a11" name="Default Changelist" comment="" />
-      <created>1585547572705</created>
+      <changelist id="8ff2e96a-d1dc-4e84-9890-4544dec9ce77" name="Default Changelist" comment="" />
+      <created>1587949090038</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1585547572705</updated>
+      <updated>1587949090038</updated>
     </task>
-    <task id="LOCAL-00001" summary="1">
-      <created>1587895339430</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1587895339430</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -87,9 +304,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>
