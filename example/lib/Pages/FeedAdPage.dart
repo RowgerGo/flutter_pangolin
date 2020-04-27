@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:pangolin/pangolin.dart' show WebController,FeedAdView;
+import 'package:pangolin/pangolin.dart' show FeedAdView;
 class FeedAdPage extends StatefulWidget {
   @override
   _FeedAdPageState createState() => _FeedAdPageState();
 }
 
 class _FeedAdPageState extends State<FeedAdPage> {
-  WebController webController;
 
   @override
   void initState() {
@@ -16,7 +15,7 @@ class _FeedAdPageState extends State<FeedAdPage> {
 
   @override
   Widget build(BuildContext context) {
-    FeedAdView feedAdView=FeedAdView(onWebCreated: onWebCreated);
+    FeedAdView feedAdView=FeedAdView();
 
     return MaterialApp(
       home: Scaffold(
@@ -24,15 +23,14 @@ class _FeedAdPageState extends State<FeedAdPage> {
           title: const Text('PlatformView example'),
         ),
         body: Container(
-          child: feedAdView,
+          child: AndroidView(
+            //设置标识
+            viewType: "feedadview",
+          ),
+          color: Colors.black26,
           height: 300.0,
         ),
       ),
     );
-  }
-
-  void onWebCreated(webController){
-    this.webController = webController;
-    // this.webController.loadUrl("https://mbd.baidu.com/newspage/data/landingshare?context=%7B%22nid%22%3A%22news_9653070956301072326%22%7D&n_type=-1&p_from=-1&pageType=1");
   }
 }
