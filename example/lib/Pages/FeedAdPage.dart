@@ -33,6 +33,6 @@ class _FeedAdPageState extends State<FeedAdPage> {
 
   void onWebCreated(webController){
     this.webController = webController;
-    this.webController.loadUrl("http://www.baidu.com");
+    // this.webController.loadUrl("https://mbd.baidu.com/newspage/data/landingshare?context=%7B%22nid%22%3A%22news_9653070956301072326%22%7D&n_type=-1&p_from=-1&pageType=1");
   }
 }

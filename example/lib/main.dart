@@ -138,7 +138,7 @@ class MyHome extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).pushNamed("FeedAdPage");
                   },
-                  child: Text("FeedAdPage"),
+                  child: Text("信息流广告FeedAdPage"),
                 )
               ],
             ),
