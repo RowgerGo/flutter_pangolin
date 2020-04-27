@@ -23,9 +23,10 @@ class _FeedAdPageState extends State<FeedAdPage> {
           title: const Text('PlatformView example'),
         ),
         body: Container(
-          child: AndroidView(
-            //设置标识
-            viewType: "feedadview",
+          child: FeedAdView(
+            text: "我是原生参数",
+            color: 0xFFf2173b,
+            size: 30,
           ),
           color: Colors.black26,
           height: 300.0,

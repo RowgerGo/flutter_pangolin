@@ -61,11 +61,24 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
         this.mTestTextView = lTextView;
 
         //flutter 传递过来的参数
-        if (params!=null&&params.containsKey("content")) {
-            String myContent = (String) params.get("content");
+        if (params!=null&&params.containsKey("text")) {
+            String myContent = (String) params.get("text");
             lTextView.setText(myContent);
         }
+        if (params!=null&&params.containsKey("size")) {
+            Integer size = (Integer) params.get("size");
+            int i = size.intValue();
+            float rr = (float)i;
+            System.out.println("========================");
+            System.out.println(rr);
+            lTextView.setTextSize(rr);
+        }
+        if (params!=null&&params.containsKey("color")) {
+            Long _color=(Long) params.get("color");
+            int ii= new Long(_color).intValue();
 
+            lTextView.setTextColor(ii);
+        }
     }
 
 
@@ -90,6 +103,8 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
 
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
-
+            System.out.println(call.arguments);
     }
+
+
 }
