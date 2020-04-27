@@ -12,18 +12,17 @@ import io.flutter.plugin.platform.PlatformViewFactory;
 
 public class FeedAdFactory extends PlatformViewFactory {
     private final BinaryMessenger messenger;
-    private final View containerView;
 
     public FeedAdFactory(BinaryMessenger messenger, View containerView){
         super(StandardMessageCodec.INSTANCE);
         this.messenger = messenger;
-        this.containerView = containerView;
+
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public PlatformView create(Context context, int id, Object args) {
         Map<String, Object> params = (Map<String, Object>) args;
-        return new FeedAdView(context, messenger, id, params, containerView);
+        return new FeedAdView(context, messenger, id, params);
     }
 }
