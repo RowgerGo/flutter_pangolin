@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
 //View上层组件
-class FeedAdView extends StatefulWidget {
+class NativeTextView extends StatefulWidget {
   String text;
   int color;
   int size;
-  FeedAdView({Key key, @required this.text,this.color,this.size});
+  NativeTextView({Key key, @required this.text,this.color,this.size});
 
   @override
-  _FeedAdViewState createState() => _FeedAdViewState();
+  _NativeTextViewState createState() => _NativeTextViewState();
 }
 
-class _FeedAdViewState extends State<FeedAdView> {
+class _NativeTextViewState extends State<NativeTextView> {
   @override
   Widget build(BuildContext context) {
     var params= {
@@ -24,13 +24,13 @@ class _FeedAdViewState extends State<FeedAdView> {
     };
     if (defaultTargetPlatform == TargetPlatform.android) {
       return AndroidView(
-        viewType: 'feedadview',
+        viewType: 'nativetextview',
         creationParams:params,
         creationParamsCodec: const StandardMessageCodec(),
       );
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       return UiKitView(
-        viewType: 'feedadview',
+        viewType: 'nativetextview',
         creationParams: params,
         creationParamsCodec: const StandardMessageCodec(),
       );

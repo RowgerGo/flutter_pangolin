@@ -1,16 +1,19 @@
 package com.tongyangsheng.pangolin;
+
 import android.content.Context;
 import android.view.View;
+
+import java.util.Map;
+
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.StandardMessageCodec;
 import io.flutter.plugin.platform.PlatformView;
 import io.flutter.plugin.platform.PlatformViewFactory;
-import java.util.Map;
 
-public class FeedAdFactory extends PlatformViewFactory {
+public class NativeTextViewFactory extends PlatformViewFactory {
     private final BinaryMessenger messenger;
 
-    public FeedAdFactory(BinaryMessenger messenger, View containerView){
+    public NativeTextViewFactory(BinaryMessenger messenger, View containerView){
         super(StandardMessageCodec.INSTANCE);
         this.messenger = messenger;
 
