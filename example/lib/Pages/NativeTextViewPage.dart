@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:pangolin/pangolin.dart' show NativeTextView,NativeFeedAdView;
+import 'package:pangolin/pangolin.dart'
+    show ViewController, NativeFeedAdView, NativeTextView;
 
 class NativeTextViewPage extends StatefulWidget {
   @override
@@ -8,6 +9,9 @@ class NativeTextViewPage extends StatefulWidget {
 }
 
 class _NativeTextViewPageState extends State<NativeTextViewPage> {
+  ViewController _controller;
+  String _text = "垃圾代码";
+
   @override
   void initState() {
     super.initState();
@@ -15,7 +19,6 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -24,22 +27,22 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
         body: Container(
           child: Column(
             children: <Widget>[
-              Container(
-                height: 100,
-                child: NativeTextView(
-                  text: "我是原生视图1",
-                  color: 0xFFf2173b,
-                  size: 30,
+              FutureBuilder(
+                future: Future.delayed(Duration(microseconds: 2000)),
+                builder: (c, s) => Expanded(
+                  child: NativeFeedAdView(
+                    onViewCreated: _onViewCreated,
+                    text: _text,
+                    color: 0xFFf2173b,
+                    size: 150540,
+                  ),
                 ),
               ),
-              Container(
-                height: 100,
-                child: NativeFeedAdView(
-                  text: "我是原生视图NativeFeedAdView",
-                  color: 0xFFf2173b,
-                  size: 15,
-                ),
-              )
+              GestureDetector(
+                  onTap: () {
+                    _controller.updateView('545445');
+                  },
+                  child: Text(_text))
             ],
           ),
           height: double.infinity,
@@ -47,5 +50,19 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
         ),
       ),
     );
+  }
+
+  void _onViewCreated(ViewController controller) {
+    _controller = controller;
+    Timer.periodic(Duration(milliseconds: 1000), (timer) {
+      var now = new DateTime.now();
+      this.setState(() {
+        _text = now.second.toString();
+      });
+      // 每隔 1 秒钟会调用一次，如果要结束187468
+      //timer.cancel()
+    });
+    var now = new DateTime.now();
+    controller.updateView(now.second.toString());
   }
 }
