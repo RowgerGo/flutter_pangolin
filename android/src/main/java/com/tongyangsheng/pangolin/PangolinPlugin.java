@@ -30,7 +30,7 @@ public class PangolinPlugin implements FlutterPlugin, MethodCallHandler, Activit
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
         BinaryMessenger messenger = flutterPluginBinding.getBinaryMessenger();
-        //flutterPluginBinding.getPlatformViewRegistry().registerViewFactory("feedadview", new FeedAdFactory(messenger, null));
+        flutterPluginBinding.getPlatformViewRegistry().registerViewFactory("feedadview", new FeedAdFactory(messenger, null));
         flutterPluginBinding.getPlatformViewRegistry().registerViewFactory("nativetextview", new NativeTextViewFactory(messenger, null));
         onAttachedToEngine(flutterPluginBinding.getApplicationContext(), flutterPluginBinding.getBinaryMessenger());
     }
