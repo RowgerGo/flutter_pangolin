@@ -33,18 +33,9 @@ import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
 public class NativeTextView implements PlatformView, MethodCallHandler {
     public Context context;
     Registrar registrar;
-    private final TextView mTestTextView;
+    TextView mTestTextView;
     LinearLayout feedAdView;
 
-    WebView webView;
-    TextView textView;
-    String url = "";
-    MethodChannel channel;
-    private TTFeedAd mFeedAData;
-
-    private TTAdNative mTTAdNative;
-    private TTAdDislike mTTAdDislike;
-    private TTNativeExpressAd mTTAd;
 
     NativeTextView(
             final Context context,
@@ -53,14 +44,16 @@ public class NativeTextView implements PlatformView, MethodCallHandler {
             Map<String, Object> params
     ) {
         //创建 TextView
+        this.mTestTextView=new TextView(context);
+        updateTextDara(params);
+        this.Test();
+    }
+    public void Test(){
         TextView lTextView = new TextView(context);
         lTextView.setText("Android的原生TextView");
         lTextView.setTextColor(0xFF944913);
         this.mTestTextView = lTextView;
-        updateTextDara(params);
-
     }
-
 
     @Override
     public View getView() {
@@ -78,23 +71,23 @@ public class NativeTextView implements PlatformView, MethodCallHandler {
     }
     private void updateTextDara(Map<String, Object> params){
         //flutter 传递过来的参数
-        if (params!=null&&params.containsKey("text")) {
-            String myContent = (String) params.get("text");
-            this.mTestTextView.setText(myContent);
-        }
-        if (params!=null&&params.containsKey("size")) {
-            Integer size = (Integer) params.get("size");
-            int i = size.intValue();
-            float rr = (float)i;
-            System.out.println("========================");
-            System.out.println(rr);
-            this.mTestTextView.setTextSize(rr);
-        }
-        if (params!=null&&params.containsKey("color")) {
-            Long _color=(Long) params.get("color");
-            int ii= new Long(_color).intValue();
-            this.mTestTextView.setTextColor(ii);
-        }
+//        if (params!=null&&params.containsKey("text")) {
+//            String myContent = (String) params.get("text");
+//            this.mTestTextView.setText(myContent);
+//        }
+//        if (params!=null&&params.containsKey("size")) {
+//            Integer size = (Integer) params.get("size");
+//            int i = size.intValue();
+//            float rr = (float)i;
+//            System.out.println("========================");
+//            System.out.println(rr);
+//            this.mTestTextView.setTextSize(rr);
+//        }
+//        if (params!=null&&params.containsKey("color")) {
+//            Long _color=(Long) params.get("color");
+//            int ii= new Long(_color).intValue();
+//            this.mTestTextView.setTextColor(ii);
+//        }
     }
     //创建WebView对象
     private TextView getTextView(Context context,View containerView){
