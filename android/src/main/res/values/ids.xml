@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tv_listitem_ad_title" type="id" />
+    <item name="tv_listitem_ad_source" type="id" />
+    <item name="tv_listitem_ad_desc" type="id" />
+    <item name="iv_listitem_image" type="id" />
+    <item name="iv_listitem_icon" type="id" />
+    <item name="iv_listitem_dislike" type="id" />
+    <item name="btn_listitem_creative" type="id" />
+    <item name="btn_listitem_stop" type="id" />
+    <item name="btn_listitem_remove" type="id" />
+</resources>

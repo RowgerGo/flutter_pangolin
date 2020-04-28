@@ -40,5 +40,7 @@ class _NativeTextViewState extends State<NativeTextView> {
   }
 
   //视图创建完成
-  Future<void> onPlatformViewCreated(id) async {}
+  Future<void> onPlatformViewCreated(id) async {
+
+  }
 }

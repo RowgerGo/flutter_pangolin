@@ -77,7 +77,7 @@ class _MyAppState extends State<MyApp> {
         appName: "爱看",
         allowShowNotify: true,
         allowShowPageWhenScreenLock: true,
-        debug: true,
+        debug: false,
         supportMultiProcess: true
     ).then((v){
       _loadSplashAd();
