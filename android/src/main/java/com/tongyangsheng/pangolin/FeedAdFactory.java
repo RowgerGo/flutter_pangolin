@@ -20,6 +20,6 @@ public class FeedAdFactory extends PlatformViewFactory {
     @Override
     public PlatformView create(Context context, int id, Object args) {
         Map<String, Object> params = (Map<String, Object>) args;
-        return new NativeTextView(context, messenger, id, params);
+        return new FeedAdView(context, messenger, id, params);
     }
 }

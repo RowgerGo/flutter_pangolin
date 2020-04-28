@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:pangolin/pangolin.dart' show NativeTextView;
+import 'package:pangolin/pangolin.dart' show NativeTextView,NativeFeedAdView;
 
 class NativeTextViewPage extends StatefulWidget {
   @override
@@ -34,10 +34,10 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
               ),
               Container(
                 height: 100,
-                child: NativeTextView(
-                  text: "我是原生视图2",
+                child: NativeFeedAdView(
+                  text: "我是原生视图NativeFeedAdView",
                   color: 0xFFf2173b,
-                  size: 30,
+                  size: 15,
                 ),
               )
             ],
