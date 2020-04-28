@@ -30,7 +30,7 @@ import com.bytedance.sdk.openadsdk.TTAdNative;
 import com.bytedance.sdk.openadsdk.TTFeedAd;
 import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
 
-public class FeedAdView implements PlatformView, MethodCallHandler {
+public class NativeTextView implements PlatformView, MethodCallHandler {
     public Context context;
     Registrar registrar;
     private final TextView mTestTextView;
@@ -46,12 +46,12 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
     private TTAdDislike mTTAdDislike;
     private TTNativeExpressAd mTTAd;
 
-    FeedAdView(
+    NativeTextView(
             final Context context,
             BinaryMessenger messenger,
             int id,
             Map<String, Object> params
-            ) {
+    ) {
         //创建 TextView
         TextView lTextView = new TextView(context);
         lTextView.setText("Android的原生TextView");

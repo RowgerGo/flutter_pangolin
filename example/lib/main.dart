@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:pangolin/pangolin.dart' as Pangolin;
 
-import 'Pages/FeedAdPage.dart';
+import 'Pages/NativeTextViewPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -113,7 +113,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: MyHome(),
-      routes: <String, WidgetBuilder>{'FeedAdPage': (_) => FeedAdPage()},
+      routes: <String, WidgetBuilder>{'NativeTextViewPage': (_) => NativeTextViewPage()},
     );
   }
 }
@@ -136,7 +136,7 @@ class MyHome extends StatelessWidget {
                 ),
                 FlatButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed("FeedAdPage");
+                    Navigator.of(context).pushNamed("NativeTextViewPage");
                   },
                   child: Text("信息流广告FeedAdPage"),
                 )
