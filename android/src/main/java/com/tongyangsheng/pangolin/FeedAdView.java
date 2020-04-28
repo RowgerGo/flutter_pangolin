@@ -33,18 +33,9 @@ import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
 public class FeedAdView implements PlatformView, MethodCallHandler {
     public Context context;
     Registrar registrar;
-    private final TextView mTestTextView;
-    LinearLayout feedAdView;
-
-    WebView webView;
-    TextView textView;
-    String url = "";
-    MethodChannel channel;
-    private TTFeedAd mFeedAData;
+    View FeedAdView;
 
     private TTAdNative mTTAdNative;
-    private TTAdDislike mTTAdDislike;
-    private TTNativeExpressAd mTTAd;
 
     FeedAdView(
             final Context context,
@@ -52,20 +43,23 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
             int id,
             Map<String, Object> params
             ) {
-        //创建 TextView
-        TextView lTextView = new TextView(context);
-        lTextView.setText("Android的原生TextView");
-        lTextView.setTextColor(0xFF944913);
-        this.mTestTextView = lTextView;
-        updateTextDara(params);
 
+        //step1:初始化sdk
+        TTAdManager ttAdManager = TTAdManagerHolder.get();
+        //step2:(可选，强烈建议在合适的时机调用):申请部分权限，如read_phone_state,防止获取不了imei时候，下载类广告没有填充的问题。
+        TTAdManagerHolder.get().requestPermissionIfNecessary(context);
+        //step3:创建TTAdNative对象,用于调用广告请求接口
+        mTTAdNative = ttAdManager.createAdNative(context);
+        // codeid暂时先写死，后面传入
+        loadAd("945155596");
     }
 
 
     @Override
     public View getView() {
-        System.out.print("=============== getView ======================");
-        return  mTestTextView;
+        System.out.print("=============== FeedAdView ======================");
+        //return  mTestTextView;
+        return  FeedAdView;
     }
 
     @Override
@@ -76,35 +70,37 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
     public void onMethodCall(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         System.out.println(call.arguments);
     }
-    private void updateTextDara(Map<String, Object> params){
-        //flutter 传递过来的参数
-        if (params!=null&&params.containsKey("text")) {
-            String myContent = (String) params.get("text");
-            this.mTestTextView.setText(myContent);
-        }
-        if (params!=null&&params.containsKey("size")) {
-            Integer size = (Integer) params.get("size");
-            int i = size.intValue();
-            float rr = (float)i;
-            System.out.println("========================");
-            System.out.println(rr);
-            this.mTestTextView.setTextSize(rr);
-        }
-        if (params!=null&&params.containsKey("color")) {
-            Long _color=(Long) params.get("color");
-            int ii= new Long(_color).intValue();
-            this.mTestTextView.setTextColor(ii);
-        }
+
+    private void loadAd(String codeId){
+        //step4:创建feed广告请求类型参数AdSlot,具体参数含义参考文档
+        AdSlot adSlot = new AdSlot.Builder()
+                .setCodeId(codeId)
+                .setSupportDeepLink(true)
+                .setImageAcceptedSize(640, 320)
+                .setAdCount(3) //请求广告数量为1到3条
+                .build();
+        //step5:请求广告，调用feed广告异步请求接口，加载到广告后，拿到广告素材自定义渲染
+        mTTAdNative.loadFeedAd(adSlot,new TTAdNative.FeedAdListener(){
+
+            @Override
+            public void onError(int i, String s) {
+                System.out.println("************** mTTAdNative.loadFeedAd  onError ******************");
+                System.out.println(i);
+                System.out.println(s);
+            }
+
+            @Override
+            public void onFeedAdLoad(List<TTFeedAd> list) {
+                if (list == null || list.isEmpty()) {
+                    System.out.println("****************** on FeedAdLoaded: ad is null! ******************");
+                    return;
+                }
+                for (TTFeedAd ad:list){
+                   View ad_view= ad.getAdView();
+                   FeedAdView=ad_view;
+                }
+            }
+        });
     }
-    //创建WebView对象
-    private TextView getTextView(Context context,View containerView){
-        TextView lTextView = new TextView(context);
-        lTextView.setText("Android的原生TextView");
-        lTextView.setTextColor(0xFF944913);
-        return lTextView;
-    }
-
-
-
 
 }
