@@ -9,12 +9,19 @@ class NativeTextViewPage extends StatefulWidget {
 }
 
 class _NativeTextViewPageState extends State<NativeTextViewPage> {
+  Timer _timer;
   ViewController _controller;
   String _text = "垃圾代码";
 
   @override
   void initState() {
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
   @override
@@ -27,15 +34,13 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
         body: Container(
           child: Column(
             children: <Widget>[
-              FutureBuilder(
-                future: Future.delayed(Duration(microseconds: 2000)),
-                builder: (c, s) => Expanded(
-                  child: NativeFeedAdView(
-                    onViewCreated: _onViewCreated,
-                    text: _text,
-                    color: 0xFFf2173b,
-                    size: 150540,
-                  ),
+              Expanded(
+                child: NativeFeedAdView(
+                  onViewCreated: _onViewCreated,
+                  codeId: '945155596',
+                  adWidth: 500,
+                  adHeight: 250,
+                  time: _text,
                 ),
               ),
               GestureDetector(
@@ -45,22 +50,21 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
                   child: Text(_text))
             ],
           ),
-          height: double.infinity,
-          color: Colors.black26,
         ),
       ),
     );
   }
 
   void _onViewCreated(ViewController controller) {
+    // 垃圾代码，有bug，需要在页面上放一个字符串，通过在UI创建完成之后，使用setState触发页面rebuild，从而使原生View在flutter端渲染出来
     _controller = controller;
-    Timer.periodic(Duration(milliseconds: 1000), (timer) {
+    _timer = Timer.periodic(Duration(milliseconds: 1000), (timer) {
       var now = new DateTime.now();
       this.setState(() {
         _text = now.second.toString();
       });
-      // 每隔 1 秒钟会调用一次，如果要结束187468
-      //timer.cancel()
+      // 4865
+      timer.cancel();
     });
     var now = new DateTime.now();
     controller.updateView(now.second.toString());
