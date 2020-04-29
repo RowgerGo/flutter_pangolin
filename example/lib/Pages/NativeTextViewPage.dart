@@ -13,6 +13,7 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
   ViewController _controller;
   String _text = "垃圾代码";
 
+
   @override
   void initState() {
     super.initState();
@@ -37,6 +38,14 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
               Expanded(
                 child: NativeFeedAdView(
                   onViewCreated: _onViewCreated,
+                  onAdClicked:(){
+                     print("==========================广告被点击111");
+                     print("==========================广告被点击222");
+                  } ,
+                  onAdFailedToLoad:(Map<String, dynamic> error){
+                    print("==========================广告加载失败");
+                     print("onAdFailedToLoad!!! $error");
+                  },
                   codeId: '945155596',
                   adWidth: 500,
                   adHeight: 250,
@@ -68,5 +77,7 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
     });
     var now = new DateTime.now();
     controller.updateView(now.second.toString());
+
+
   }
 }
