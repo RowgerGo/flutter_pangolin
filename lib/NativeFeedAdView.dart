@@ -10,10 +10,23 @@ typedef void ViewCreatedCallback(ViewController controller);
 //View上层组件
 class NativeFeedAdView extends StatefulWidget {
   final ViewCreatedCallback onViewCreated;
-  String text;
-  int color;
-  int size;
-  NativeFeedAdView({Key key, @required this.text,this.color,this.size,this.onViewCreated});
+
+  String codeId;
+  String time;
+  double adWidth;
+  double adHeight;
+  int imageWidth;
+  int imageHeight;
+
+
+  NativeFeedAdView({Key key,
+  @required this.codeId,
+  @required this.adWidth,
+  @required this.adHeight,
+  this.time,
+  this.imageWidth=320,
+  this.imageHeight=160,
+  this.onViewCreated});
 
   @override
   _NativeFeedAdViewState createState() => _NativeFeedAdViewState();
@@ -23,9 +36,12 @@ class _NativeFeedAdViewState extends State<NativeFeedAdView> {
   @override
   Widget build(BuildContext context) {
     var params= {
-      "text": widget.text,
-      "color":widget.color,
-      "size":widget.size
+      "codeId": widget.codeId,
+      "time":widget.time,
+      "adWidth":widget.adWidth,
+      "adHeight":widget.adHeight,
+      "imageWidth":widget.imageWidth,
+      "imageHeight":widget.imageHeight
     };
     if (defaultTargetPlatform == TargetPlatform.android) {
       return AndroidView(
