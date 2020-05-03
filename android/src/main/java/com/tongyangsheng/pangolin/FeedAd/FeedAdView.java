@@ -1,6 +1,10 @@
 package com.tongyangsheng.pangolin.FeedAd;
 import android.content.Context;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.FrameLayout.LayoutParams;
+//import android.widget.FrameLayout.LayoutParams.MATCH_PARENT;
+//import android.widget.FrameLayout.LayoutParams.WRAP_CONTENT;
 import com.bytedance.sdk.openadsdk.AdSlot;
 import com.bytedance.sdk.openadsdk.TTAdManager;
 import com.bytedance.sdk.openadsdk.TTAdNative;
@@ -28,7 +32,9 @@ import static io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 * */
 
 public class FeedAdView implements PlatformView, MethodCallHandler {
+    FrameLayout feedAdView;
     View feedView;
+    View lastView;
     private final MethodChannel methodChannel;
     private TTAdNative mTTAdNative;
     float adWidth=320;
@@ -51,6 +57,8 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
         TTAdManagerHolder.get().requestPermissionIfNecessary(context);
         //step3:创建TTAdNative对象,用于调用广告请求接口
         mTTAdNative = ttAdManager.createAdNative(context);
+        //feedAdView
+        feedAdView = new FrameLayout(context);
 
         feedView=new View(context);
 
@@ -85,12 +93,12 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
 
     @Override
     public View getView() {
-        return  feedView;
+        return  feedAdView;
     }
 
     @Override
     public void dispose() {
-
+      feedAdView.removeAllViews();
     }
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
@@ -106,7 +114,7 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
         System.out.println(call.arguments);
     }
     private void updateView(MethodCall methodCall, Result result) {
-
+        System.out.println("====================updateView================");
         String text = (String) methodCall.arguments;
 
         System.out.println(text);
@@ -142,9 +150,9 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
                 TTNativeExpressAd ad=list.get(0);
                 bindAdListener(ad);
                 View ad_view=ad.getExpressAdView();
-
+                feedAdView.addView(ad_view);
                 feedView=ad_view;
-
+                lastView=ad_view;
                 ad.render();
 
 
