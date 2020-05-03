@@ -30,6 +30,7 @@ import com.bytedance.sdk.openadsdk.TTAdNative;
 import com.bytedance.sdk.openadsdk.TTFeedAd;
 import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
 
+
 public class NativeTextView implements PlatformView, MethodCallHandler {
     public Context context;
     Registrar registrar;
