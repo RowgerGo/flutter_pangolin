@@ -51,7 +51,7 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
         TTAdManagerHolder.get().requestPermissionIfNecessary(context);
         //step3:创建TTAdNative对象,用于调用广告请求接口
         mTTAdNative = ttAdManager.createAdNative(context);
-        // codeid暂时先写死，后面传入
+
         feedView=new View(context);
 
         if (params!=null&&params.containsKey("imageHeight")) {
@@ -175,7 +175,7 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
 
           @Override
           public void onRenderSuccess(View view, float v, float v1) {
-
+              methodChannel.invokeMethod("onRenderSuccess", null);
           }
       });
     }

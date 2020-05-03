@@ -18,6 +18,7 @@ class NativeFeedAdView extends StatefulWidget {
   int imageWidth;
   int imageHeight;
   final Function() onAdClicked;
+  final Function() onRenderSuccess;
   final Function(Map<String, dynamic>) onAdFailedToLoad;
 
   NativeFeedAdView({Key key,
@@ -27,6 +28,7 @@ class NativeFeedAdView extends StatefulWidget {
   this.time,
   this.onAdClicked,
     this.onAdFailedToLoad,
+    this.onRenderSuccess,
   this.imageWidth=320,
   this.imageHeight=160,
   this.onViewCreated});
@@ -37,7 +39,8 @@ class NativeFeedAdView extends StatefulWidget {
   _NativeFeedAdViewState createState() => _NativeFeedAdViewState(
     NativeAdEventDelegate(
       onAdClicked: onAdClicked,
-      onAdFailedToLoad: onAdFailedToLoad
+      onAdFailedToLoad: onAdFailedToLoad,
+      onRenderSuccess: onRenderSuccess
     )
   );
 }
