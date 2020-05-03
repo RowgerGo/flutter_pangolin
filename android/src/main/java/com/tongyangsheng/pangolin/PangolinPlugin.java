@@ -117,6 +117,9 @@ public class PangolinPlugin implements FlutterPlugin, MethodCallHandler, Activit
                 if (appName == null || appName == "") {
                     result.error("600", "appName can't be null", null);
                 } else {
+                    System.out.println("=====================TTAdManagerHolder.init初始化");
+                    System.out.println(appId);
+                    System.out.println(appName);
                     TTAdManagerHolder.init(applicationContext, appId, useTextureView, appName, allowShowNotify, allowShowPageWhenScreenLock, debug, supportMultiProcess);
                     result.success(true);
                 }
