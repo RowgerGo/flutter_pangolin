@@ -27,6 +27,7 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
 
   @override
   Widget build(BuildContext context) {
+    // print(this._text);
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -43,7 +44,7 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
                      print("==========================广告被点击222");
                   } ,
                   onRenderSuccess: (){
-                    print("==========================广告渲染成功");
+
                   },
                   onAdFailedToLoad:(Map<String, dynamic> error){
                     print("==========================广告加载失败");
@@ -70,14 +71,7 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
   void _onViewCreated(ViewController controller) {
     // 垃圾代码，有bug，需要在页面上放一个字符串，通过在UI创建完成之后，使用setState触发页面rebuild，从而使原生View在flutter端渲染出来
     _controller = controller;
-    _timer = Timer.periodic(Duration(milliseconds: 1000), (timer) {
-      var now = new DateTime.now();
-      this.setState(() {
-        _text = now.second.toString();
-      });
-      // 4865
-      timer.cancel();
-    });
+
     var now = new DateTime.now();
     controller.updateView(now.second.toString());
 
