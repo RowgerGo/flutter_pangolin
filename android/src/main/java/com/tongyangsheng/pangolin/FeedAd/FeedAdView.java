@@ -1,32 +1,12 @@
 package com.tongyangsheng.pangolin.FeedAd;
-
-import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.bumptech.glide.Glide;
 import com.bytedance.sdk.openadsdk.AdSlot;
-import com.bytedance.sdk.openadsdk.TTAdConstant;
 import com.bytedance.sdk.openadsdk.TTAdManager;
 import com.bytedance.sdk.openadsdk.TTAdNative;
-import com.bytedance.sdk.openadsdk.TTAppDownloadListener;
-import com.bytedance.sdk.openadsdk.TTFeedAd;
-import com.bytedance.sdk.openadsdk.TTImage;
-import com.bytedance.sdk.openadsdk.TTNativeAd;
 import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
-import com.tongyangsheng.pangolin.R;
 import com.tongyangsheng.pangolin.TTAdManagerHolder;
-import com.tongyangsheng.pangolin.TToast;
-
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -35,25 +15,26 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
+
 import io.flutter.plugin.platform.PlatformView;
 
 import static io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 
 // 广告sdk
-
-interface Callback {
-    public void getView(View _view);
-
-}
+/*
+* 需要优化的地方：
+* 1.加载。
+* 2.在dispose中remove掉view
+* */
 
 public class FeedAdView implements PlatformView, MethodCallHandler {
-    private FrameLayout mExpressContainer;
-    public Context context;
-    Registrar registrar;
     View feedView;
     private final MethodChannel methodChannel;
     private TTAdNative mTTAdNative;
+    float adWidth=320;
+    float adHeight=100;
+    int imageWidth=320;
+    int imageHeight=100;
 
     FeedAdView(
             final Context context,
@@ -72,14 +53,38 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
         mTTAdNative = ttAdManager.createAdNative(context);
         // codeid暂时先写死，后面传入
         feedView=new View(context);
-        loadAd("945155596");
+
+        if (params!=null&&params.containsKey("imageHeight")) {
+            int imageHeight = (int) params.get("imageHeight");
+            this.imageHeight=imageHeight;
+        }
+        if (params!=null&&params.containsKey("imageWidth")) {
+            int imageWidth = (int) params.get("imageWidth");
+            this.imageWidth=imageWidth;
+        }
+
+        if (params!=null&&params.containsKey("adWidth")) {
+            double adWidth = (double) params.get("adWidth");
+            this.adWidth=(float)adWidth;
+        }
+        if (params!=null&&params.containsKey("adHeight")) {
+            double adHeight = (double) params.get("adHeight");
+            this.adHeight=(float)adHeight;
+        }
+        if (params!=null&&params.containsKey("codeId")) {
+            String codeId = (String) params.get("codeId");
+            loadAd(codeId);
+        }else {
+            System.out.print("===============codeId不可为空！！！======================");
+            System.out.print("===============codeId不可为空！！！======================");
+            System.out.print("===============codeId不可为空！！！======================");
+        }
+
     }
 
 
     @Override
     public View getView() {
-        System.out.print("=============== FeedAdView ======================");
-        //return  mTestTextView;
         return  feedView;
     }
 
@@ -101,9 +106,9 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
         System.out.println(call.arguments);
     }
     private void updateView(MethodCall methodCall, Result result) {
-        System.out.println("********************************");
+
         String text = (String) methodCall.arguments;
-        System.out.println("===============================");
+
         System.out.println(text);
 
         result.success(null);
@@ -114,8 +119,8 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
         AdSlot adSlot = new AdSlot.Builder()
                 .setCodeId(codeId)
                 .setSupportDeepLink(true)
-                .setImageAcceptedSize(320, 160)
-                .setExpressViewAcceptedSize(700,400)
+                .setImageAcceptedSize(imageWidth, imageHeight)
+                .setExpressViewAcceptedSize(adWidth,adHeight)
                 .setAdCount(3) //请求广告数量为1到3条
                 .build();
         //step5:请求广告，调用feed广告异步请求接口，加载到广告后，拿到广告素材自定义渲染
@@ -135,7 +140,7 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
                 }
                 System.out.println("****************** 获取到 ad列表, ******************长度为："+list.size());
                 TTNativeExpressAd ad=list.get(0);
-
+                bindAdListener(ad);
                 View ad_view=ad.getExpressAdView();
 
                 feedView=ad_view;
@@ -147,78 +152,33 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
         });
 
     }
+    void bindAdListener(TTNativeExpressAd ad){
+      ad.setExpressInteractionListener(new TTNativeExpressAd.ExpressAdInteractionListener() {
+          @Override
+          public void onAdClicked(View view, int i) {
+              methodChannel.invokeMethod("onAdClicked", null);
+          }
 
-//    //绑定广告行为
-//    private void bindAdListener(TTNativeExpressAd ad) {
-//        ad.setExpressInteractionListener(new TTNativeExpressAd.ExpressAdInteractionListener() {
-//            @Override
-//            public void onAdClicked(View view, int type) {
-//                TToast.show(context, "广告被点击");
-//            }
-//
-//            @Override
-//            public void onAdShow(View view, int type) {
-//                TToast.show(context, "广告展示");
-//            }
-//
-//            @Override
-//            public void onRenderFail(View view, String msg, int code) {
-//                Log.e("ExpressView","render fail:"+(System.currentTimeMillis()));
-//                TToast.show(context, msg+" code:"+code);
-//            }
-//
-//            @Override
-//            public void onRenderSuccess(View view, float width, float height) {
-//                //返回view的宽高 单位 dp
-//                TToast.show(context, "渲染成功");
-//                //在渲染成功回调时展示广告，提升体验
-//                mExpressContainer.removeAllViews();
-//                mExpressContainer.addView(view);
-//            }
-//        });
-//        //dislike设置
-//        bindDislike(ad, false);
-//        if (ad.getInteractionType() != TTAdConstant.INTERACTION_TYPE_DOWNLOAD){
-//            return;
-//        }
-//        //可选，下载监听设置
-//        ad.setDownloadListener(new TTAppDownloadListener() {
-//            @Override
-//            public void onIdle() {
-//                TToast.show(context, "点击开始下载", Toast.LENGTH_LONG);
-//            }
-//
-//            @Override
-//            public void onDownloadActive(long totalBytes, long currBytes, String fileName, String appName) {
-//                if (!mHasShowDownloadActive) {
-//                    mHasShowDownloadActive = true;
-//                    TToast.show(context, "下载中，点击暂停", Toast.LENGTH_LONG);
-//                }
-//            }
-//
-//            @Override
-//            public void onDownloadPaused(long totalBytes, long currBytes, String fileName, String appName) {
-//                TToast.show(context, "下载暂停，点击继续", Toast.LENGTH_LONG);
-//            }
-//
-//            @Override
-//            public void onDownloadFailed(long totalBytes, long currBytes, String fileName, String appName) {
-//                TToast.show(context, "下载失败，点击重新下载", Toast.LENGTH_LONG);
-//            }
-//
-//            @Override
-//            public void onInstalled(String fileName, String appName) {
-//                TToast.show(context, "安装完成，点击图片打开", Toast.LENGTH_LONG);
-//            }
-//
-//            @Override
-//            public void onDownloadFinished(long totalBytes, String fileName, String appName) {
-//                TToast.show(context, "点击安装", Toast.LENGTH_LONG);
-//            }
-//        });
-//    }
-//
+          @Override
+          public void onAdShow(View view, int i) {
 
+          }
+
+          @Override
+          public void onRenderFail(View view, String s, int i) {
+              System.out.println("******************  bindAdListener onRenderFail ******************");
+              Map<String, String> map = new HashMap<String,String>();
+              map.put("msg", s);
+              map.put("code", String.valueOf(i));
+              methodChannel.invokeMethod("onAdFailedToLoad",map);
+          }
+
+          @Override
+          public void onRenderSuccess(View view, float v, float v1) {
+
+          }
+      });
+    }
 
 }
 

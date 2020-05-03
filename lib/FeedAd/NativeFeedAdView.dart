@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-
+import 'package:pangolin/FeedAd/NativeAdEventDelegate.dart';
 //View创建完成
 typedef void ViewCreatedCallback(ViewController controller);
 
@@ -10,22 +10,51 @@ typedef void ViewCreatedCallback(ViewController controller);
 //View上层组件
 class NativeFeedAdView extends StatefulWidget {
   final ViewCreatedCallback onViewCreated;
-  String text;
-  int color;
-  int size;
-  NativeFeedAdView({Key key, @required this.text,this.color,this.size,this.onViewCreated});
+
+  String codeId;
+  String time;
+  double adWidth;
+  double adHeight;
+  int imageWidth;
+  int imageHeight;
+  final Function() onAdClicked;
+  final Function(Map<String, dynamic>) onAdFailedToLoad;
+
+  NativeFeedAdView({Key key,
+  @required this.codeId,
+  @required this.adWidth,
+  @required this.adHeight,
+  this.time,
+  this.onAdClicked,
+    this.onAdFailedToLoad,
+  this.imageWidth=320,
+  this.imageHeight=160,
+  this.onViewCreated});
+
+
 
   @override
-  _NativeFeedAdViewState createState() => _NativeFeedAdViewState();
+  _NativeFeedAdViewState createState() => _NativeFeedAdViewState(
+    NativeAdEventDelegate(
+      onAdClicked: onAdClicked,
+      onAdFailedToLoad: onAdFailedToLoad
+    )
+  );
 }
 
 class _NativeFeedAdViewState extends State<NativeFeedAdView> {
+  _NativeFeedAdViewState(this.delegate);
+  final NativeAdEventDelegate delegate;
+
   @override
   Widget build(BuildContext context) {
     var params= {
-      "text": widget.text,
-      "color":widget.color,
-      "size":widget.size
+      "codeId": widget.codeId,
+      "time":widget.time,
+      "adWidth":widget.adWidth,
+      "adHeight":widget.adHeight,
+      "imageWidth":widget.imageWidth,
+      "imageHeight":widget.imageHeight
     };
     if (defaultTargetPlatform == TargetPlatform.android) {
       return AndroidView(
@@ -51,8 +80,9 @@ class _NativeFeedAdViewState extends State<NativeFeedAdView> {
     if(widget.onViewCreated == null){
       return;
     }
-    widget.onViewCreated(ViewController.init(id));
-
+    //widget.onViewCreated(ViewController.init(id));
+    final ViewController controller=ViewController.init(id);
+    controller._channel.setMethodCallHandler(delegate.handleMethod);
   }
 }
 
@@ -63,8 +93,8 @@ class ViewController {
 
   ViewController.init(int id){
     _channel = MethodChannel('nativefeedview_$id');
-  }
 
+  }
   Future<void> updateView(String url) async{
     assert(url != null);
     return _channel.invokeMethod('updateView',url);
