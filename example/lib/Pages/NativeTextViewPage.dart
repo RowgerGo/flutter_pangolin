@@ -42,6 +42,9 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
                      print("==========================广告被点击111");
                      print("==========================广告被点击222");
                   } ,
+                  onRenderSuccess: (){
+                    print("==========================广告渲染成功");
+                  },
                   onAdFailedToLoad:(Map<String, dynamic> error){
                     print("==========================广告加载失败");
                      print("onAdFailedToLoad!!! $error");
