@@ -35,7 +35,7 @@ public class RewardVideo {
 
     private boolean mIsExpress = false; //是否请求模板广告
 
-    private boolean debug = true;
+    private boolean debug = false;
 
     static MethodChannel _channel;
     public Context context;
