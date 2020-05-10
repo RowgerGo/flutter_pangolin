@@ -29,7 +29,7 @@ public class RewardVideoActivity extends FlutterActivity {
     public String mVerticalCodeId;
     private boolean mIsExpress = false; //是否请求模板广告
 
-    private boolean debug = debug;
+    private boolean debug = false;
 
     static MethodChannel _channel;
 
