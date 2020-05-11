@@ -58,7 +58,7 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
               ),
               GestureDetector(
                   onTap: () {
-                    _controller.updateView('545445');
+
                   },
                   child: Text(_text))
             ],
@@ -71,10 +71,6 @@ class _NativeTextViewPageState extends State<NativeTextViewPage> {
   void _onViewCreated(ViewController controller) {
     // 垃圾代码，有bug，需要在页面上放一个字符串，通过在UI创建完成之后，使用setState触发页面rebuild，从而使原生View在flutter端渲染出来
     _controller = controller;
-
-    var now = new DateTime.now();
-    controller.updateView(now.second.toString());
-
 
   }
 }
