@@ -98,8 +98,4 @@ class ViewController {
     _channel = MethodChannel('nativefeedview_$id');
 
   }
-  Future<void> updateView(String url) async{
-    assert(url != null);
-    return _channel.invokeMethod('updateView',url);
-  }
 }
