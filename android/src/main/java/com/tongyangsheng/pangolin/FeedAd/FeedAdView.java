@@ -102,7 +102,6 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
     }
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
-        System.out.println("===============================");
         System.out.println(call.method);
         switch (call.method) {
             case "updateView":
@@ -114,7 +113,6 @@ public class FeedAdView implements PlatformView, MethodCallHandler {
         System.out.println(call.arguments);
     }
     private void updateView(MethodCall methodCall, Result result) {
-        System.out.println("====================updateView================");
         String text = (String) methodCall.arguments;
 
         System.out.println(text);
