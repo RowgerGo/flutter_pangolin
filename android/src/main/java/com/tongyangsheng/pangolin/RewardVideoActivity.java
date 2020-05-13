@@ -195,9 +195,9 @@ public class RewardVideoActivity extends FlutterActivity {
                     @Override
                     public void onAdClose() {
                         Map<String,Object> rewardVideoCallBack = new HashMap<>();
-                        rewardVideoCallBack.put("rewardVerify",rewardVerify);
+                        rewardVideoCallBack.put("rewardVerify",true);
                         rewardVideoCallBack.put("rewardAmount",100);
-                        rewardVideoCallBack.put("rewardName",rewardName);
+                        rewardVideoCallBack.put("rewardName","onAdClose");
                         _channel.invokeMethod("onRewardResponse",rewardVideoCallBack);
                         if (debug)
                         {
