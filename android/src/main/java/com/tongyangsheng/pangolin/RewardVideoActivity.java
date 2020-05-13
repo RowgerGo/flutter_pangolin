@@ -48,6 +48,11 @@ public class RewardVideoActivity extends FlutterActivity {
         getExtraInfo();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     private void getExtraInfo() {
         Intent intent = getIntent();
         if (intent == null) {
@@ -189,6 +194,11 @@ public class RewardVideoActivity extends FlutterActivity {
 
                     @Override
                     public void onAdClose() {
+                        Map<String,Object> rewardVideoCallBack = new HashMap<>();
+                        rewardVideoCallBack.put("rewardVerify",rewardVerify);
+                        rewardVideoCallBack.put("rewardAmount",100);
+                        rewardVideoCallBack.put("rewardName",rewardName);
+                        _channel.invokeMethod("onRewardResponse",rewardVideoCallBack);
                         if (debug)
                         {
                             TToast.show(RewardVideoActivity.this, "rewardVideoAd close");
