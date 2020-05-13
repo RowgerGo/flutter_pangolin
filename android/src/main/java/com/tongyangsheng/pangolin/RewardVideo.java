@@ -146,6 +146,11 @@ public class RewardVideo {
 
                     @Override
                     public void onAdClose() {
+                        Map<String,Object> rewardVideoCallBack = new HashMap<>();
+                        rewardVideoCallBack.put("rewardVerify",true);
+                        rewardVideoCallBack.put("rewardAmount",100);
+                        rewardVideoCallBack.put("rewardName","onAdClose");
+                        _channel.invokeMethod("onRewardResponse",rewardVideoCallBack);
                         if (debug)
                         {
                             TToast.show(context, "rewardVideoAd close");
