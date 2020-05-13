@@ -189,6 +189,10 @@ public class RewardVideoActivity extends FlutterActivity {
 
                     @Override
                     public void onAdClose() {
+                        Map<String,Object> rewardVideoCallBack = new HashMap<>();
+                        rewardVideoCallBack.put("code",3);
+                        rewardVideoCallBack.put("msg","onAdClose");
+                        _channel.invokeMethod("onRewardResponse",rewardVideoCallBack);
                         if (debug)
                         {
                             TToast.show(RewardVideoActivity.this, "rewardVideoAd close");
@@ -198,6 +202,10 @@ public class RewardVideoActivity extends FlutterActivity {
                     //视频播放完成回调
                     @Override
                     public void onVideoComplete() {
+                        Map<String,Object> rewardVideoCallBack = new HashMap<>();
+                        rewardVideoCallBack.put("code",2);
+                        rewardVideoCallBack.put("msg","onVideoComplete");
+                        _channel.invokeMethod("onRewardResponse",rewardVideoCallBack);
                        if (debug)
                        {
                            TToast.show(RewardVideoActivity.this, "rewardVideoAd complete");
@@ -206,6 +214,10 @@ public class RewardVideoActivity extends FlutterActivity {
 
                     @Override
                     public void onVideoError() {
+                        Map<String,Object> rewardVideoCallBack = new HashMap<>();
+                        rewardVideoCallBack.put("code",0);
+                        rewardVideoCallBack.put("msg","onVideoError");
+                        _channel.invokeMethod("onRewardResponse",rewardVideoCallBack);
                         if (debug)
                         {
                             TToast.show(RewardVideoActivity.this, "rewardVideoAd error");
@@ -220,10 +232,10 @@ public class RewardVideoActivity extends FlutterActivity {
                             TToast.show(RewardVideoActivity.this, "verify:" + rewardVerify + " amount:" + rewardAmount +
                                     " name:" + rewardName);
                         }
+
                         Map<String,Object> rewardVideoCallBack = new HashMap<>();
-                        rewardVideoCallBack.put("rewardVerify",rewardVerify);
-                        rewardVideoCallBack.put("rewardAmount",rewardAmount);
-                        rewardVideoCallBack.put("rewardName",rewardName);
+                        rewardVideoCallBack.put("code",1);
+                        rewardVideoCallBack.put("msg","");
                         _channel.invokeMethod("onRewardResponse",rewardVideoCallBack);
                     }
 
