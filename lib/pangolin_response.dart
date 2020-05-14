@@ -26,13 +26,11 @@ class BasePangolinResponse {
 }
 
 class onRewardResponse extends BasePangolinResponse {
-  final bool rewardVerify;
-  final int rewardAmount;
-  final String rewardName;
+  final int callCode;
+  final String callMsg;
 
   onRewardResponse.fromMap(Map map)
-  : rewardVerify = map["rewardVerify"],
-        rewardAmount = map["rewardAmount"],
-        rewardName = map["rewardName"],
+  : callCode = map["callCode"],
+        callMsg = map["callMsg"],
   super._(map[_errCode], map[_errStr]);
 }

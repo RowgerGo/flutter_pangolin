@@ -24,9 +24,8 @@ class _MyAppState extends State<MyApp> {
     {
       if(value is Pangolin.onRewardResponse)
         {
-          print("激励视频回调：${value.rewardVerify}");
-          print("激励视频回调：${value.rewardName}");
-          print("激励视频回调：${value.rewardAmount}");
+          print("激励视频回调：${value.callCode}");
+          print("激励视频回调：${value.callMsg}");
         }
       else
         {

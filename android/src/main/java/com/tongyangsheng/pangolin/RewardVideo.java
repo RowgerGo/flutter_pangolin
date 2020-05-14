@@ -98,6 +98,10 @@ public class RewardVideo {
         mTTAdNative.loadRewardVideoAd(adSlot, new TTAdNative.RewardVideoAdListener() {
             @Override
             public void onError(int code, String message) {
+                Map<String,Object> rewardVideoCallBack = new HashMap<>();
+                rewardVideoCallBack.put("callCode",0);
+                rewardVideoCallBack.put("callMsg","广告加载失败");
+                _channel.invokeMethod("onRewardResponse",rewardVideoCallBack);
                 Log.e(TAG, "onError: " + code + ", " + String.valueOf(message));
                 if(debug)
                 {
@@ -147,9 +151,8 @@ public class RewardVideo {
                     @Override
                     public void onAdClose() {
                         Map<String,Object> rewardVideoCallBack = new HashMap<>();
-                        rewardVideoCallBack.put("rewardVerify",true);
-                        rewardVideoCallBack.put("rewardAmount",100);
-                        rewardVideoCallBack.put("rewardName","onAdClose");
+                        rewardVideoCallBack.put("callCode",1);
+                        rewardVideoCallBack.put("callMsg","广告点击关闭");
                         _channel.invokeMethod("onRewardResponse",rewardVideoCallBack);
                         if (debug)
                         {
@@ -183,9 +186,12 @@ public class RewardVideo {
                                     " name:" + rewardName);
                         }
                         Map<String,Object> rewardVideoCallBack = new HashMap<>();
-                        rewardVideoCallBack.put("rewardVerify",rewardVerify);
-                        rewardVideoCallBack.put("rewardAmount",rewardAmount);
-                        rewardVideoCallBack.put("rewardName",rewardName);
+                        if(rewardVerify){
+                            rewardVideoCallBack.put("callCode",2);
+                        }else {
+                            rewardVideoCallBack.put("callCode",3);
+                        }
+                        rewardVideoCallBack.put("callMsg","广告观看结束自动回调");
                         _channel.invokeMethod("onRewardResponse",rewardVideoCallBack);
                     }
 
